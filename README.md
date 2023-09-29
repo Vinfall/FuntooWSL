@@ -14,7 +14,7 @@ based on [wsldl](https://github.com/yuk7/wsldl).
 
 ## Install
 
-1. Check [How to build](#how-to-build) and do it yourself. ~~Download installer zip from [release](https://github.com/Vinfall/FuntooWSL/releases/latest) or [weekly action build](https://github.com/Vinfall/FuntooWSL/releases/tag/action-build) (recommended)~~
+1. Check [How to build](#how-to-build) and do it yourself, or download installer zip from [release](https://github.com/Vinfall/FuntooWSL/releases).
 2. Extract all files in zip file to same directory (e.g. `C:\WSL\Funtoo`)
 3. Run `Funtoo.exe` to Extract rootfs and Register to WSL
 
