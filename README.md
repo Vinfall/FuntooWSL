@@ -14,7 +14,7 @@ based on [wsldl](https://github.com/yuk7/wsldl).
 
 ## Install
 
-1. Download installer zip from [release](https://github.com/Vinfall/FuntooWSL/releases/latest) or [weekly action build](https://github.com/Vinfall/FuntooWSL/releases/tag/action-build) (recommended)
+1. Check [How to build](#how-to-build) and do it yourself. ~~Download installer zip from [release](https://github.com/Vinfall/FuntooWSL/releases/latest) or [weekly action build](https://github.com/Vinfall/FuntooWSL/releases/tag/action-build) (recommended)~~
 2. Extract all files in zip file to same directory (e.g. `C:\WSL\Funtoo`)
 3. Run `Funtoo.exe` to Extract rootfs and Register to WSL
 
@@ -23,7 +23,18 @@ If you rename it, you can register with a different name and have multiple insta
 
 ## Init
 
-TBA
+```sh
+# Setup repo
+epro show
+ego sync
+# Update Funtoo Linux to latest
+emerge -auDN @world
+# Remove obsolete packages after world updates
+emerge --ask --depclean
+```
+
+The commands above does not setup portage and compiler for you as they are personal and bound to change according to your system.
+You may refer to [Funtoo Linux Installation Guide](https://www.funtoo.org/InstallPrintable), [Emerge](https://www.funtoo.org/Emerge) and [rescenic/FuntooWSL#first-setup](https://github.com/rescenic/FuntooWSL#first-setup) for further instruction.
 
 ## How-to-Use (for Installed Instance)
 
@@ -70,6 +81,7 @@ sudo make
 #sudo make clean
 ```
 
+The output `FuntooWSL.zip` would be as large as 1GB, this is normal so don't panic.
 If you want to use newer stage3 rootfs or [subarches](https://www.funtoo.org/Subarches) optimized for your CPU, replace `BASE_URL` in Makefile.
 
 By the way, I use Gentoo icon instead of Funtoo to avoid compiling wsldl, as [the one provided by rescenic](https://github.com/rescenic/FuntooWSL/raw/master/res/Funtoo/icon.ico) is a meme.
@@ -79,4 +91,5 @@ By the way, I use Gentoo icon instead of Funtoo to avoid compiling wsldl, as [th
 MIT
 
 Copyright (c) 2020-2021 Rescenic
+
 Copyright (c) 2023 Vinfall
