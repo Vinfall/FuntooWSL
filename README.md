@@ -75,6 +75,7 @@ Usage :
 # Build
 git clone https://github.com/Vinfall/FuntooWSL
 cd FuntooWSL
+# Use of `sudo` recommended to avoid weird file permission in rootfs
 sudo make
 
 # Clean
