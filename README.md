@@ -72,17 +72,21 @@ Usage :
 ## How to build
 
 ```sh
-# Build
+# Build FuntooWSL
 git clone https://github.com/Vinfall/FuntooWSL
 cd FuntooWSL
 # Use of `sudo` recommended to avoid weird file permission in rootfs
 sudo make
 
-# Clean
-#sudo make clean
+# Backup build
+sha512sum FuntooWSL.zip > FuntooWSL.zip.sha512
+mv FuntooWSL.zip* some/where/secure/
+
+# Clean up
+sudo make clean
 ```
 
-The output `FuntooWSL.zip` would be as large as 1GB, this is normal so don't panic.
+The output `FuntooWSL.zip` would be as large as 1GB, this is **normal** so don't panic.
 If you want to use newer stage3 rootfs or [subarches](https://www.funtoo.org/Subarches) optimized for your CPU, replace `BASE_URL` in Makefile.
 
 By the way, I use Gentoo icon instead of Funtoo to avoid compiling wsldl, as [the one provided by rescenic](https://github.com/rescenic/FuntooWSL/raw/master/res/Funtoo/icon.ico) is a meme.
