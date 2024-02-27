@@ -3,7 +3,7 @@ LNCR_EXE=Funtoo.exe
 
 DLR=curl
 DLR_FLAGS=--silent --location
-BASE_URL=https://build.funtoo.org/next/x86-64bit/generic_64/2023-09-26/stage3-generic_64-next-2023-09-26.tar.xz
+BASE_URL=https://build.funtoo.org/next/x86-64bit/generic_64/stage3-latest.tar.xz
 LNCR_ZIP_URL!=curl --silent https://api.github.com/repos/yuk7/wsldl/releases | jq --raw-output ".[0].assets[].browser_download_url" | grep --extended-regexp "icons.zip"
 LNCR_ZIP_EXE=Gentoo.exe
 

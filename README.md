@@ -97,4 +97,4 @@ MIT
 
 Copyright (c) 2020-2021 Rescenic
 
-Copyright (c) 2023 Vinfall
+Copyright (c) 2023-2024 Vinfall
