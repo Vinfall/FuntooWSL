@@ -43,5 +43,5 @@ jobs:
           omitBody: True
           omitBodyDuringUpdate: True
           omitNameDuringUpdate: True
-          artifacts: "release/FuntooWSL.zip*"
+          artifacts: "release/Funtoo.zip*"
           token: ${{ secrets.GITHUB_TOKEN }}
