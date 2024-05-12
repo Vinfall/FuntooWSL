@@ -1,16 +1,19 @@
 # FuntooWSL
+
 Funtoo Linux on WSL2
 inspired by [FuntooWSL](https://github.com/rescenic/FuntooWSL)
 based on [wsldl](https://github.com/yuk7/wsldl).
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
-![License](https://img.shields.io/github/license/Vinfall/ClearWSL.svg?style=flat-square)
+![License](https://img.shields.io/github/license/Vinfall/FuntooWSL.svg?style=flat-square)
 
 **Notice: This is UNOFFICIAL and not affiliated with Funtoo Linux.**
 
 ## Requirements
-* Windows 10 Fall Creators Update x64 or later.
+
+* Windows 10 1803 April 2018 Update x64 or later.
 * Windows Subsystem for Linux feature is enabled.
+* Latest WSL recommended.
 
 ## Install
 
@@ -38,41 +41,60 @@ You may refer to [Funtoo Linux Installation Guide](https://www.funtoo.org/Instal
 
 ## How-to-Use (for Installed Instance)
 
-### exe Usage
-```dos
+### Usage
+
+```powershell
 Usage :
     <no args>
       - Open a new shell with your default settings.
+
     run <command line>
       - Run the given command line in that distro. Inherit current directory.
+
+    runp <command line (includes windows path)>
+      - Run the path translated command line in that distro.
+
     config [setting [value]]
       - `--default-user <user>`: Set the default user for this distro to <user>
       - `--default-uid <uid>`: Set the default user uid for this distro to <uid>
       - `--append-path <on|off>`: Switch of Append Windows PATH to $PATH
       - `--mount-drive <on|off>`: Switch of Mount drives
+      - `--default-term <default|wt|flute>`: Set default terminal window
+
     get [setting]
       - `--default-uid`: Get the default user uid in this distro
       - `--append-path`: Get on/off status of Append Windows PATH to $PATH
       - `--mount-drive`: Get on/off status of Mount drives
-      - `--lxuid`: Get LxUID key for this distro
-    backup
-      - Output backup.tar.gz to the current directory using tar command.
-      
+      - `--wsl-version`: Get WSL Version 1/2 for this distro
+      - `--default-term`: Get Default Terminal for this distro launcher
+      - `--lxguid`: Get WSL GUID key for this distro
+
+    backup [contents]
+      - `--tgz`: Output backup.tar.gz to the current directory using tar command
+      - `--reg`: Output settings registry file to the current directory
+
     clean
       - Uninstall the distro.
+
     help
       - Print this usage message.
 ```
 
-### How to uninstall instance
-```dos
->Funtoo.exe clean
+### Uninstall
+
+```powershell
+.\Funtoo.exe clean
 ```
 
 ## How to build
 
+FuntooWSL can be built on GNU/Linux or WSL.
+
+`curl`, `bsdtar`, `jq` and `unzip` is required for build.
+
 ```sh
 # Build FuntooWSL
+sudo apt install -y curl libarchive-tools jq unzip
 git clone https://github.com/Vinfall/FuntooWSL
 cd FuntooWSL
 # Use of `sudo` recommended to avoid weird file permission in rootfs
@@ -82,7 +104,7 @@ sudo make
 sha512sum FuntooWSL.zip > FuntooWSL.zip.sha512
 mv FuntooWSL.zip* some/where/secure/
 
-# Clean up
+# Clean-up using `sudo` as some files are owned by root
 sudo make clean
 ```
 
