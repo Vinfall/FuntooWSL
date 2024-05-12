@@ -27,8 +27,8 @@ jobs:
         run: |
           sudo make
           sudo make clean
-          sha512sum FuntooWSL.zip > FuntooWSL.zip.sha512
-          mv FuntooWSL.zip* release/
+          sha512sum Funtoo.zip > Funtoo.zip.sha512
+          mv Funtoo.zip* release/
       - name: save release as artifact
         uses: actions/upload-artifact@v4
         with:
